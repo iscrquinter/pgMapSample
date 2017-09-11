@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocalización</title>
+    <style>
+        #map {
+                width: 280px;
+                height: 230px;
+                display: block;
+                margin: 5px auto;
+                position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkcms3mtta0PtC_PCQRIy44gOIlVGa-aI&sensor=false">
+    </script>
+    <script>
+//        var currentHeading=null;
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            navigator.geolocation.getCurrentPosition(onSuccess, onFailure, 
+            {timeout : 5000, enableHighAccuracy: true});
+        }
+    </script>
+    <script src="js/mapGoogle.js"></script>
+</body>
+</html>
